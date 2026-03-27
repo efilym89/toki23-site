@@ -21,11 +21,15 @@
     />
     <script>
       (function initAppBase() {
+        const pathname = window.location.pathname || "/";
+
         if (/github\.io$/i.test(window.location.hostname)) {
           const [repoName] = window.location.pathname.split("/").filter(Boolean);
           window.__APP_BASE_PATH__ = repoName ? `/${repoName}/` : "/";
+        } else if (/\/[^/]+\.[a-z0-9]+$/i.test(pathname)) {
+          window.__APP_BASE_PATH__ = pathname.slice(0, pathname.lastIndexOf("/") + 1) || "/";
         } else {
-          window.__APP_BASE_PATH__ = "/";
+          window.__APP_BASE_PATH__ = pathname.endsWith("/") ? pathname : `${pathname}/`;
         }
 
         const stylesheet = document.createElement("link");

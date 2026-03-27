@@ -43,12 +43,43 @@ function resolveAppBasePath() {
     return window.__APP_BASE_PATH__;
   }
 
-  if (typeof window !== "undefined" && /github\.io$/i.test(window.location.hostname)) {
-    const [repoName] = window.location.pathname.split("/").filter(Boolean);
-    if (repoName) return `/${repoName}/`;
+  if (typeof window !== "undefined") {
+    const pathname = window.location.pathname || "/";
+
+    if (/github\.io$/i.test(window.location.hostname)) {
+      const [repoName] = pathname.split("/").filter(Boolean);
+      if (repoName) return `/${repoName}/`;
+    }
+
+    if (/\/[^/]+\.[a-z0-9]+$/i.test(pathname)) {
+      return pathname.slice(0, pathname.lastIndexOf("/") + 1) || "/";
+    }
+
+    return pathname.endsWith("/") ? pathname : `${pathname}/`;
   }
 
   return "/";
+}
+
+function resolveCurrentRoutePath() {
+  const params = new URLSearchParams(window.location.search);
+  const routeOverride = params.get("route");
+
+  if (routeOverride) {
+    return routeOverride.startsWith("/") ? routeOverride : `/${routeOverride}`;
+  }
+
+  const routePath = stripBasePath(window.location.pathname);
+
+  if (routePath === "/index.html") {
+    return "/";
+  }
+
+  if (/\/index\.html$/i.test(routePath)) {
+    return routePath.slice(0, -"/index.html".length) || "/";
+  }
+
+  return routePath || "/";
 }
 
 function stripBasePath(pathname) {
@@ -74,7 +105,7 @@ function linkProps(path = "/") {
 function createUiState() {
   const params = new URLSearchParams(window.location.search);
   return {
-    route: parseRoute(stripBasePath(window.location.pathname)),
+    route: parseRoute(resolveCurrentRoutePath()),
     adminSection: params.get("section") || "dashboard",
     theme: loadTheme(),
     catalog: {
@@ -2238,7 +2269,7 @@ function attachGlobalListeners() {
     true,
   );
   window.addEventListener("popstate", () => {
-    uiState.route = parseRoute(stripBasePath(window.location.pathname));
+    uiState.route = parseRoute(resolveCurrentRoutePath());
     if (uiState.route.name === "admin") uiState.adminSection = new URLSearchParams(window.location.search).get("section") || "dashboard";
     uiState.pendingHash = window.location.hash || "";
     uiState.pendingScrollBehavior = "auto";
