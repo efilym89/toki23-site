@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Obsidian Sushi - Catalog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-container": "#b2b1ff",
+                        "surface-container-high": "#262a34",
+                        "inverse-surface": "#dfe2ef",
+                        "error-container": "#93000a",
+                        "outline-variant": "#5a4139",
+                        "surface-tint": "#ffb59d",
+                        "on-primary-container": "#521400",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#e2dfff",
+                        "tertiary": "#ddc483",
+                        "inverse-primary": "#ac3400",
+                        "on-background": "#dfe2ef",
+                        "surface-container-highest": "#31353f",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#842600",
+                        "inverse-on-surface": "#2c303a",
+                        "secondary": "#c2c1ff",
+                        "on-primary": "#5d1800",
+                        "on-secondary-fixed": "#0d006a",
+                        "on-primary-fixed": "#390b00",
+                        "primary": "#ffb59d",
+                        "on-tertiary-fixed-variant": "#554510",
+                        "on-tertiary-container": "#4d3d08",
+                        "on-tertiary": "#3d2f00",
+                        "on-secondary-fixed-variant": "#362eb9",
+                        "surface-container-low": "#171c25",
+                        "surface-bright": "#353943",
+                        "primary-fixed": "#ffdbd0",
+                        "tertiary-fixed": "#fae09d",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#241a00",
+                        "background": "#0f131c",
+                        "secondary-container": "#3931bb",
+                        "surface-container-lowest": "#0a0e17",
+                        "tertiary-fixed-dim": "#ddc483",
+                        "surface-container": "#1b2029",
+                        "surface-dim": "#0f131c",
+                        "secondary-fixed-dim": "#c2c1ff",
+                        "on-surface": "#dfe2ef",
+                        "on-surface-variant": "#e2bfb4",
+                        "outline": "#aa8a80",
+                        "tertiary-container": "#c0a96b",
+                        "on-secondary": "#1c02a5",
+                        "primary-fixed-dim": "#ffb59d",
+                        "primary-container": "#f85f27",
+                        "surface": "#0f131c",
+                        "surface-variant": "#31353f"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-blur { backdrop-filter: blur(20px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body select-none">
+<!-- Top Navigation Shell -->
+<header class="bg-surface/60 backdrop-blur-xl dark:bg-[#0F131C]/60 docked full-width top-0 sticky z-50 no-border shadow-none">
+<div class="flex justify-between items-center px-6 py-4 w-full max-w-7xl mx-auto">
+<h1 class="text-xl font-black text-[#FFB59D] uppercase tracking-widest font-headline">Obsidian Sushi</h1>
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-[#FFB59D]">search</span>
+<span class="material-symbols-outlined text-[#FFB59D]">person</span>
+</div>
+</div>
+</header>
+<!-- Sticky Category Navigation (Horizontal Scroll) -->
+<nav class="sticky top-[60px] z-40 bg-background/80 glass-blur py-4 px-6 overflow-x-auto no-scrollbar border-b border-white/5">
+<div class="flex space-x-6 items-center whitespace-nowrap min-w-max">
+<a class="font-headline text-sm font-bold tracking-tight text-[#FFB59D] border-b-2 border-[#F85F27] pb-1" href="#">Роллы</a>
+<a class="font-headline text-sm font-bold tracking-tight text-white/70 hover:text-[#FFB59D] transition-colors duration-300" href="#">Суши</a>
+<a class="font-headline text-sm font-bold tracking-tight text-white/70 hover:text-[#FFB59D] transition-colors duration-300" href="#">Сеты</a>
+<a class="font-headline text-sm font-bold tracking-tight text-white/70 hover:text-[#FFB59D] transition-colors duration-300" href="#">Гункан</a>
+<a class="font-headline text-sm font-bold tracking-tight text-white/70 hover:text-[#FFB59D] transition-colors duration-300" href="#">Напитки</a>
+</div>
+</nav>
+<!-- Hero / Category Title -->
+<section class="px-6 pt-8 pb-4">
+<h2 class="font-headline text-4xl font-extrabold text-on-surface tracking-tight mb-2">Фирменные Роллы</h2>
+<p class="text-on-surface-variant body-md max-w-[80%]">Искусство японской кухни в каждой детали. Только свежие ингредиенты.</p>
+</section>
+<!-- Product Grid -->
+<main class="px-4 pb-40">
+<div class="grid grid-cols-2 gap-4">
+<!-- Card 1 -->
+<div class="bg-surface-container-highest rounded-xl overflow-hidden flex flex-col group transition-all duration-300 hover:scale-[1.02]">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Close-up of premium Philadelphia roll with fresh salmon, cream cheese and cucumber on dark slate plate with dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCFzhlR8KD4Vu6f9R5Q0QSg1LhlyWwCTgX0nO7Zt_a63XB1fgSpqEi_qHt3uWudqq42DTYowNhSdRYkvC-dxmlSf-RjBeBYbBa4XNJeVNqhGQQ1DAFpYyk0hz31tVe2bYEElexN2heRlvlR_V9MI6j0H14bZFTFWSmuPYuMgBtbcVD3VbzkH66clBXe3KPiucztjrWbpWQAu2fAlS30VVNbUHFQmQFIfW19Mxcvt_xHFYZtOajKJg_WlZqviF42t7tZFmtkyAmVkyb"/>
+<div class="absolute top-2 left-2 px-2 py-1 bg-tertiary-container rounded-full">
+<span class="text-[10px] font-bold text-on-tertiary-container uppercase tracking-widest">TOP</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<span class="text-[10px] font-label text-on-surface-variant tracking-wider mb-1">280г</span>
+<h3 class="font-headline text-base font-bold text-on-surface leading-tight mb-3">Филадельфия Люкс</h3>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-lg font-headline font-bold text-primary">850₽</span>
+<button class="w-10 h-10 rounded-full bg-gradient-to-br from-[#FFB59D] to-[#F85F27] flex items-center justify-center text-on-primary-fixed active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-highest rounded-xl overflow-hidden flex flex-col group transition-all duration-300 hover:scale-[1.02]">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Gourmet black dragon roll with unagi eel, avocado and spicy mayo sauce on dark minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBRFJI0rVWNC1Ozx_H6RpKAX1zVdURtjUM94xFA86XEP1D-L5IggsOcY-R86WyOWtM7vzLgOwvyPBakiVQvDSwtSsq8K4DmqYtxr3jhdXXXefpMnLGd2sgq4YRzLn0i5Kvm8uHoEEIxU4gn-n_ZyS4jQ_FuNsKatdvNNpuZ0oQYykH8esKxAQaqqeHFq4qB8sCZejbg9YlGEULngR_ycodsSkhjjG0okVn5b2FjwSirnUXj1Owf_Kh2TlTopXhAvlj6_S1c7YmciId"/>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<span class="text-[10px] font-label text-on-surface-variant tracking-wider mb-1">265г</span>
+<h3 class="font-headline text-base font-bold text-on-surface leading-tight mb-3">Черный Дракон</h3>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-lg font-headline font-bold text-primary">920₽</span>
+<button class="w-10 h-10 rounded-full bg-gradient-to-br from-[#FFB59D] to-[#F85F27] flex items-center justify-center text-on-primary-fixed active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-highest rounded-xl overflow-hidden flex flex-col group transition-all duration-300 hover:scale-[1.02]">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Fresh spicy tuna rolls with scallions and sesame seeds, artfully arranged on a black ceramic tray" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXoHKj1UZyjyVMFNYBxpprzPpa2srHHWO8lwn3un_ABHaNVkqBQ65VNlzhB65XzWPNiX7vNwCCvPw3fp1GdYG7tGaUovdQ-NRblarl8B_8orHWt65pIbs5wq9gKExuzOO5ZBeK3iwKDwynPCxpC4x3VURH6GlmAMY5CtDP06n7J3CUC7N3zdJ8jNtR9I_PZoIutkzVvrriZ7anT60aXBiF1As6SxylwEzWOhzo4JQXjUYKE9QSlZzMg--15h00H1gJ21ktJU-CeEw5"/>
+<div class="absolute top-2 left-2 px-2 py-1 bg-error-container rounded-full">
+<span class="text-[10px] font-bold text-on-error-container uppercase tracking-widest">SPICY</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<span class="text-[10px] font-label text-on-surface-variant tracking-wider mb-1">240г</span>
+<h3 class="font-headline text-base font-bold text-on-surface leading-tight mb-3">Острая Туна</h3>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-lg font-headline font-bold text-primary">780₽</span>
+<button class="w-10 h-10 rounded-full bg-gradient-to-br from-[#FFB59D] to-[#F85F27] flex items-center justify-center text-on-primary-fixed active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-highest rounded-xl overflow-hidden flex flex-col group transition-all duration-300 hover:scale-[1.02]">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Tempura shrimp rolls with mango and cucumber, garnished with microgreens and sweet chili sauce drops" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFM9G6tSBOUj614HHVjEcyNbw6DIZN_Bzh9yIJq2j8z1T7-1jCbbh4A3He1DhA6OpKG4PyZt6-INRWvJ6ZiISdPrhdlW2g5vSF-198hFkqxDxcMxJoWVnvQqBi5Tl0muKm8LeYkwkBOiFGWygL0hlC2hUAzjEt3DC55h84-qXDG0Ffjk-_6ShcUXcDBILFcT_W7OlL7Inw_kJGrNUgAyfonTKDmbArj99KisKgiGwhlA2LrpRttqUEINlhHuEKSvp2w5XfgYNmwLs1"/>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<span class="text-[10px] font-label text-on-surface-variant tracking-wider mb-1">290г</span>
+<h3 class="font-headline text-base font-bold text-on-surface leading-tight mb-3">Темпура Манго-Креветка</h3>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-lg font-headline font-bold text-primary">890₽</span>
+<button class="w-10 h-10 rounded-full bg-gradient-to-br from-[#FFB59D] to-[#F85F27] flex items-center justify-center text-on-primary-fixed active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-highest rounded-xl overflow-hidden flex flex-col group transition-all duration-300 hover:scale-[1.02]">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="California roll with premium crab meat, creamy avocado, and flying fish roe coating" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6yUmHjcbTXWwx18zG8mdeRf2dYztJqDWAHt3vmYRUM8JwyhyT0fx9x2oFjKcED2uwhK73C0RoGqg8yQLl0hGA6zq1MgjFZ0NnIOdmXkZWTlbKK-UWMxGGsCXx4HsNO20dsEulShhb_T18oiy1qTqCtaZ8Af9d4OG-dCH5XYuzZIdw5cdpUTiiVgAlt62e0D1696o2fpGQ1D3o4maD35kY6RZ8OHIdRRehu2YgxuDWrD0e5CxLOiu5G1-hD4pddUnpFEj9QJCOv9j1"/>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<span class="text-[10px] font-label text-on-surface-variant tracking-wider mb-1">250г</span>
+<h3 class="font-headline text-base font-bold text-on-surface leading-tight mb-3">Калифорния Роял</h3>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-lg font-headline font-bold text-primary">720₽</span>
+<button class="w-10 h-10 rounded-full bg-gradient-to-br from-[#FFB59D] to-[#F85F27] flex items-center justify-center text-on-primary-fixed active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container-highest rounded-xl overflow-hidden flex flex-col group transition-all duration-300 hover:scale-[1.02]">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Artisanal sushi platter with gold leaf accents on nigiri and premium rolls, moody atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX6eA1ZXW0lJcXOGz5ohTkasYxWwEOhfau1ZRhlKkL7L7EzEg3bFmolWxxc6l6GWwpoXaWg3fKGLuZR78WJM0POM2c7lyP2j1o1DMTSHDC8J2exd7D1xr4aH_2PTpzXQON2WqImayOrBqZiT4q1AsLR565MTaNzmwBS4k2g9s4Ioi_I0SUEnMDOtS3p2DKEGIFZKF2vDujMIS6UcoKQh3NUiBNjPIghICYE_3g89ovBvrpE00vgVwreYmKg9t4Kzq0Itf0EAkcrSCS"/>
+<div class="absolute top-2 left-2 px-2 py-1 bg-tertiary rounded-full">
+<span class="text-[10px] font-bold text-on-tertiary uppercase tracking-widest">NEW</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<span class="text-[10px] font-label text-on-surface-variant tracking-wider mb-1">270г</span>
+<h3 class="font-headline text-base font-bold text-on-surface leading-tight mb-3">Обисидиан Маки</h3>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-lg font-headline font-bold text-primary">1100₽</span>
+<button class="w-10 h-10 rounded-full bg-gradient-to-br from-[#FFB59D] to-[#F85F27] flex items-center justify-center text-on-primary-fixed active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Sticky Cart Bar -->
+<div class="fixed bottom-0 left-0 w-full z-50 px-6 pb-8 pt-4">
+<div class="bg-[#0F131C]/90 glass-blur rounded-full flex items-center justify-between p-2 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] border border-white/5">
+<div class="flex items-center space-x-4 pl-6">
+<div class="relative">
+<span class="material-symbols-outlined text-primary text-2xl">shopping_cart</span>
+<span class="absolute -top-2 -right-2 bg-[#F85F27] text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center shadow-lg">2</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-white/40 uppercase tracking-tighter font-bold">Итого</span>
+<span class="text-lg font-headline font-extrabold text-white">1250₽</span>
+</div>
+</div>
+<button class="bg-gradient-to-br from-[#FFB59D] to-[#F85F27] text-on-primary-fixed font-headline font-bold px-10 py-4 rounded-full active:scale-95 transition-transform shadow-lg shadow-[#F85F27]/20 uppercase tracking-widest text-xs">
+                Оформить
+            </button>
+</div>
+</div>
+<!-- Hidden Bottom Nav for Desktop Logic (Suppressed for this View Focus) -->
+<nav class="md:hidden">
+<!-- Structural Placeholder for Nav Shell Requirements -->
+</nav>
+</body></html>

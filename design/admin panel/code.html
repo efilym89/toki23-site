@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#b2b1ff",
+              "surface-container-high": "#262a34",
+              "inverse-surface": "#dfe2ef",
+              "error-container": "#93000a",
+              "outline-variant": "#5a4139",
+              "surface-tint": "#ffb59d",
+              "on-primary-container": "#521400",
+              "error": "#ffb4ab",
+              "secondary-fixed": "#e2dfff",
+              "tertiary": "#ddc483",
+              "inverse-primary": "#ac3400",
+              "on-background": "#dfe2ef",
+              "surface-container-highest": "#31353f",
+              "on-error": "#690005",
+              "on-primary-fixed-variant": "#842600",
+              "inverse-on-surface": "#2c303a",
+              "secondary": "#c2c1ff",
+              "on-primary": "#5d1800",
+              "on-secondary-fixed": "#0d006a",
+              "on-primary-fixed": "#390b00",
+              "primary": "#ffb59d",
+              "on-tertiary-fixed-variant": "#554510",
+              "on-tertiary-container": "#4d3d08",
+              "on-tertiary": "#3d2f00",
+              "on-secondary-fixed-variant": "#362eb9",
+              "surface-container-low": "#171c25",
+              "surface-bright": "#353943",
+              "primary-fixed": "#ffdbd0",
+              "tertiary-fixed": "#fae09d",
+              "on-error-container": "#ffdad6",
+              "on-tertiary-fixed": "#241a00",
+              "background": "#0f131c",
+              "secondary-container": "#3931bb",
+              "surface-container-lowest": "#0a0e17",
+              "tertiary-fixed-dim": "#ddc483",
+              "surface-container": "#1b2029",
+              "surface-dim": "#0f131c",
+              "secondary-fixed-dim": "#c2c1ff",
+              "on-surface": "#dfe2ef",
+              "on-surface-variant": "#e2bfb4",
+              "outline": "#aa8a80",
+              "tertiary-container": "#c0a96b",
+              "on-secondary": "#1c02a5",
+              "primary-fixed-dim": "#ffb59d",
+              "primary-container": "#f85f27",
+              "surface": "#0f131c",
+              "surface-variant": "#31353f"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen overflow-x-hidden">
+<!-- SideNavBar Integration -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#0F131C] dark:bg-[#0F131C] shadow-2xl z-40 hidden md:flex flex-col py-8 space-y-2 font-plus-jakarta text-sm font-medium">
+<div class="px-6 mb-10">
+<h1 class="text-lg font-bold text-[#DDC483] uppercase tracking-widest">Obsidian Sushi</h1>
+<p class="text-[10px] text-white/30 uppercase tracking-[0.2em] mt-1">Concierge Admin</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center space-x-3 bg-[#31353F] text-[#FFB59D] rounded-r-full font-bold px-6 py-3 translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center space-x-3 text-white/50 px-6 py-3 hover:bg-[#171C25] hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="receipt_long">receipt_long</span>
+<span>Orders</span>
+</a>
+<a class="flex items-center space-x-3 text-white/50 px-6 py-3 hover:bg-[#171C25] hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="restaurant_menu">restaurant_menu</span>
+<span>Menu</span>
+</a>
+<a class="flex items-center space-x-3 text-white/50 px-6 py-3 hover:bg-[#171C25] hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="map">map</span>
+<span>Zones</span>
+</a>
+<a class="flex items-center space-x-3 text-white/50 px-6 py-3 hover:bg-[#171C25] hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="campaign">campaign</span>
+<span>Marketing</span>
+</a>
+<a class="flex items-center space-x-3 text-white/50 px-6 py-3 hover:bg-[#171C25] hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="px-6 mt-auto pt-8 border-t border-white/5">
+<div class="flex items-center space-x-3">
+<img alt="Admin Profile" class="w-10 h-10 rounded-full border border-primary/20 object-cover" data-alt="Close-up portrait of a professional male restaurant manager in a dark suit against a minimalist gray background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVCpBTbzLzy1mtrp0cBO-jAZWGkekI_FcVD6w8J9f32UtOO8OkQHC8w7nigniF1z2ewKEz8GwIdXx7RryaqsS7aj7YFF477eAbGslWZ8KVgSdSB5FN_uNGBwZnKDaD4qN2dI8vf0XbhV3vJbRQELJSVnD4Qr8pmm0fpGRk05a6LALeOAXxRwOYbsWTMDSEzcChFxM3rNC2A8rM6jYdfS3brlxYAMgz1KLWAemZvoXR3BihaGtzvhdCMRqeyLWTc76w0BaAYCDNzSiq"/>
+<div>
+<p class="text-xs font-bold text-on-surface">Admin Profile</p>
+<p class="text-[10px] text-white/30">Obsidian Omakase v1.0</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 min-h-screen">
+<!-- TopAppBar Integration -->
+<header class="bg-surface/60 backdrop-blur-xl dark:bg-[#0F131C]/60 sticky top-0 z-30 w-full flex justify-between items-center px-8 py-4 no-border shadow-none">
+<div class="flex items-center space-x-4">
+<h2 class="text-xl font-black text-[#FFB59D] uppercase tracking-widest">Панель управления</h2>
+</div>
+<div class="flex items-center space-x-6">
+<div class="relative hidden lg:block">
+<input class="bg-surface-container-high border-none rounded-xl px-4 py-2 text-sm w-64 focus:ring-1 focus:ring-primary/50 text-on-surface-variant placeholder-on-surface-variant/40" placeholder="Поиск заказов..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2 text-on-surface-variant/50 text-sm" data-icon="search">search</span>
+</div>
+<div class="flex items-center space-x-4">
+<button class="relative p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary-container rounded-full"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</header>
+<section class="p-8 space-y-12">
+<!-- Bento Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Stat Card: Sales -->
+<div class="bg-surface-container-highest p-6 rounded-xl border-l-4 border-primary shadow-sm hover:surface-bright transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+<span class="text-xs font-bold text-tertiary bg-tertiary/10 px-2 py-1 rounded-full">+12.5%</span>
+</div>
+<p class="text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Общий объем продаж</p>
+<h3 class="text-2xl font-bold text-on-surface">₽ 1,280,450</h3>
+</div>
+<!-- Stat Card: Orders -->
+<div class="bg-surface-container-highest p-6 rounded-xl shadow-sm hover:surface-bright transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-secondary/10 rounded-lg text-secondary">
+<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
+</div>
+<span class="text-xs font-bold text-on-surface-variant px-2 py-1 rounded-full">Сегодня</span>
+</div>
+<p class="text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Новые заказы</p>
+<h3 class="text-2xl font-bold text-on-surface">42</h3>
+</div>
+<!-- Stat Card: Zones -->
+<div class="bg-surface-container-highest p-6 rounded-xl shadow-sm hover:surface-bright transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-tertiary/10 rounded-lg text-tertiary">
+<span class="material-symbols-outlined" data-icon="distance">distance</span>
+</div>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-green-500 border-2 border-surface-container-highest"></div>
+<div class="w-6 h-6 rounded-full bg-green-500 border-2 border-surface-container-highest"></div>
+</div>
+</div>
+<p class="text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Активные зоны</p>
+<h3 class="text-2xl font-bold text-on-surface">8 / 10</h3>
+</div>
+<!-- Stat Card: Best Seller -->
+<div class="bg-surface-container-highest p-6 rounded-xl shadow-sm hover:surface-bright transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary-container/10 rounded-lg text-primary-container">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+</div>
+</div>
+<p class="text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Хит продаж</p>
+<h3 class="text-lg font-bold text-on-surface truncate">Black Truffle Unagi</h3>
+</div>
+</div>
+<!-- Dashboard Analytics Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Chart Area (Simulated with CSS) -->
+<div class="lg:col-span-2 bg-surface-container-low rounded-xl p-8 overflow-hidden">
+<div class="flex justify-between items-end mb-10">
+<div>
+<h4 class="text-headline-md font-bold text-on-surface mb-2">Аналитика продаж</h4>
+<p class="text-body-md text-on-surface-variant">Тенденция выручки за последние 7 дней</p>
+</div>
+<div class="flex space-x-2">
+<button class="px-3 py-1 text-xs font-bold rounded-full bg-primary text-on-primary">День</button>
+<button class="px-3 py-1 text-xs font-bold rounded-full bg-surface-container-high text-on-surface-variant">Неделя</button>
+</div>
+</div>
+<!-- Simulated Chart Visualization -->
+<div class="h-64 flex items-end justify-between space-x-4">
+<div class="relative w-full group">
+<div class="bg-surface-container-high w-full h-40 rounded-t-lg transition-all group-hover:bg-primary/40"></div>
+<p class="text-[10px] text-center mt-2 text-white/30 uppercase tracking-tighter">Пн</p>
+</div>
+<div class="relative w-full group">
+<div class="bg-surface-container-high w-full h-48 rounded-t-lg transition-all group-hover:bg-primary/40"></div>
+<p class="text-[10px] text-center mt-2 text-white/30 uppercase tracking-tighter">Вт</p>
+</div>
+<div class="relative w-full group">
+<div class="bg-surface-container-high w-full h-32 rounded-t-lg transition-all group-hover:bg-primary/40"></div>
+<p class="text-[10px] text-center mt-2 text-white/30 uppercase tracking-tighter">Ср</p>
+</div>
+<div class="relative w-full group">
+<div class="bg-gradient-to-t from-primary-container to-primary w-full h-56 rounded-t-lg shadow-lg shadow-primary/20"></div>
+<p class="text-[10px] text-center mt-2 text-primary font-bold uppercase tracking-tighter">Чт</p>
+</div>
+<div class="relative w-full group">
+<div class="bg-surface-container-high w-full h-44 rounded-t-lg transition-all group-hover:bg-primary/40"></div>
+<p class="text-[10px] text-center mt-2 text-white/30 uppercase tracking-tighter">Пт</p>
+</div>
+<div class="relative w-full group">
+<div class="bg-surface-container-high w-full h-52 rounded-t-lg transition-all group-hover:bg-primary/40"></div>
+<p class="text-[10px] text-center mt-2 text-white/30 uppercase tracking-tighter">Сб</p>
+</div>
+<div class="relative w-full group">
+<div class="bg-surface-container-high w-full h-36 rounded-t-lg transition-all group-hover:bg-primary/40"></div>
+<p class="text-[10px] text-center mt-2 text-white/30 uppercase tracking-tighter">Вс</p>
+</div>
+</div>
+</div>
+<!-- Right Side Card: Real-time Heatmap / Activity -->
+<div class="bg-surface-container-high rounded-xl p-8 relative overflow-hidden group">
+<h4 class="text-headline-md font-bold text-on-surface mb-6">Карта доставки</h4>
+<div class="w-full h-64 bg-surface-container-highest rounded-lg overflow-hidden relative">
+<!-- Abstract Map Representation -->
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle, #ffb59d 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="absolute top-1/2 left-1/3 w-4 h-4 bg-primary rounded-full animate-pulse shadow-[0_0_15px_#ffb59d]"></div>
+<div class="absolute top-1/4 left-1/2 w-4 h-4 bg-primary rounded-full animate-pulse shadow-[0_0_15px_#ffb59d] delay-700"></div>
+<div class="absolute bottom-1/4 right-1/4 w-4 h-4 bg-primary rounded-full animate-pulse shadow-[0_0_15px_#ffb59d] delay-1000"></div>
+</div>
+<div class="mt-6 space-y-4">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Курьеры в пути</span>
+<span class="font-bold text-primary">12</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Среднее время</span>
+<span class="font-bold text-on-surface">24 мин</span>
+</div>
+<button class="w-full mt-4 py-3 bg-surface-container-highest text-primary font-bold rounded-xl hover:bg-surface-bright transition-all text-xs uppercase tracking-widest">
+                            Открыть монитор
+                        </button>
+</div>
+</div>
+</div>
+<!-- Recent Orders Table Section -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-2xl">
+<div class="px-8 py-6 flex justify-between items-center border-b border-white/5">
+<h4 class="text-headline-md font-bold text-on-surface">Последние заказы</h4>
+<button class="text-primary text-sm font-bold hover:underline">Смотреть все</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-label-md text-white/30 uppercase tracking-widest bg-surface-container-low">
+<th class="px-8 py-4 font-medium">ID Заказа</th>
+<th class="px-8 py-4 font-medium">Клиент</th>
+<th class="px-8 py-4 font-medium">Статус</th>
+<th class="px-8 py-4 font-medium">Сумма</th>
+<th class="px-8 py-4 font-medium">Дата</th>
+<th class="px-8 py-4 font-medium text-right">Действия</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<tr class="hover:bg-white/[0.02] transition-colors group">
+<td class="px-8 py-5 text-sm font-mono text-primary">#OBS-8842</td>
+<td class="px-8 py-5">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-[10px] font-bold">АИ</div>
+<span class="text-sm font-medium text-on-surface">Александр Иванов</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter bg-green-500/10 text-green-400">Готовится</span>
+</td>
+<td class="px-8 py-5 text-sm font-bold text-on-surface">₽ 8,400</td>
+<td class="px-8 py-5 text-xs text-on-surface-variant">Сегодня, 14:20</td>
+<td class="px-8 py-5 text-right">
+<button class="p-2 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-white/[0.02] transition-colors group">
+<td class="px-8 py-5 text-sm font-mono text-primary">#OBS-8841</td>
+<td class="px-8 py-5">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-[10px] font-bold">ЕМ</div>
+<span class="text-sm font-medium text-on-surface">Елена Морозова</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter bg-primary/10 text-primary">В пути</span>
+</td>
+<td class="px-8 py-5 text-sm font-bold text-on-surface">₽ 12,200</td>
+<td class="px-8 py-5 text-xs text-on-surface-variant">Сегодня, 13:55</td>
+<td class="px-8 py-5 text-right">
+<button class="p-2 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-white/[0.02] transition-colors group">
+<td class="px-8 py-5 text-sm font-mono text-primary">#OBS-8840</td>
+<td class="px-8 py-5">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-[10px] font-bold">ДК</div>
+<span class="text-sm font-medium text-on-surface">Дмитрий Кузнецов</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter bg-white/5 text-white/40">Доставлен</span>
+</td>
+<td class="px-8 py-5 text-sm font-bold text-on-surface">₽ 5,150</td>
+<td class="px-8 py-5 text-xs text-on-surface-variant">Сегодня, 12:30</td>
+<td class="px-8 py-5 text-right">
+<button class="p-2 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Footer Integration -->
+<footer class="mt-20 border-t border-white/5 bg-[#0F131C] py-20 px-10">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="space-y-4">
+<h5 class="font-plus-jakarta font-black text-[#FFB59D] tracking-widest uppercase">Obsidian Omakase</h5>
+<p class="text-xs text-white/30 leading-relaxed font-inter tracking-wide">
+                        Система управления премиальным сервисом доставки. Каждое действие имеет значение.
+                    </p>
+</div>
+<div>
+<h6 class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-6">Поддержка</h6>
+<ul class="space-y-4 text-xs font-inter text-white/30">
+<li><a class="hover:text-[#FFB59D] transition-all" href="#">База знаний</a></li>
+<li><a class="hover:text-[#FFB59D] transition-all" href="#">API Документация</a></li>
+<li><a class="hover:text-[#FFB59D] transition-all" href="#">Служба заботы</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-6">Правовая информация</h6>
+<ul class="space-y-4 text-xs font-inter text-white/30">
+<li><a class="hover:text-[#FFB59D] transition-all" href="#">Конфиденциальность</a></li>
+<li><a class="hover:text-[#FFB59D] transition-all" href="#">Условия использования</a></li>
+<li><a class="hover:text-[#FFB59D] transition-all" href="#">Безопасность данных</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-6">Версия ПО</h6>
+<p class="text-xs font-inter text-white/30 mb-4">v1.0.4-build.82</p>
+<div class="flex space-x-4">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+<span class="text-[10px] font-bold text-on-surface uppercase tracking-widest">Система активна</span>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] text-white/20 uppercase tracking-widest font-inter">
+<p>© 2024 Obsidian Omakase. Culinary Excellence.</p>
+<div class="flex space-x-8 mt-4 md:mt-0">
+<a class="hover:text-white transition-all underline-offset-4 hover:underline" href="#">Privacy</a>
+<a class="hover:text-white transition-all underline-offset-4 hover:underline" href="#">Terms</a>
+<a class="hover:text-white transition-all underline-offset-4 hover:underline" href="#">Allergens</a>
+</div>
+</div>
+</footer>
+</main>
+<!-- BottomNavBar for Mobile View -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-end px-6 pb-6 bg-[#0F131C]/80 backdrop-blur-2xl z-50 rounded-t-3xl border-t border-white/5 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#FFB59D] to-[#F85F27] text-black rounded-full p-3 mb-4 scale-110 shadow-lg shadow-[#F85F27]/30" href="#">
+<span class="material-symbols-outlined" data-icon="restaurant" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+<span class="text-[8px] font-bold uppercase tracking-tighter mt-1">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/40 p-2 hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="text-[8px] font-bold uppercase tracking-tighter mt-1">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/40 p-2 hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="text-[8px] font-bold uppercase tracking-tighter mt-1">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/40 p-2 hover:text-white transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[8px] font-bold uppercase tracking-tighter mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

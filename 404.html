@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Токи23</title>
+    <meta
+      name="description"
+      content="Токи23 — доставка суши и роллов в Сочи: главная с каталогом, поиск, акции, личный кабинет, checkout и управляемая админ-панель."
+    />
+    <meta name="theme-color" content="#0f131c" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function initAppBase() {
+        if (/github\.io$/i.test(window.location.hostname)) {
+          const [repoName] = window.location.pathname.split("/").filter(Boolean);
+          window.__APP_BASE_PATH__ = repoName ? `/${repoName}/` : "/";
+        } else {
+          window.__APP_BASE_PATH__ = "/";
+        }
+
+        const stylesheet = document.createElement("link");
+        stylesheet.rel = "stylesheet";
+        stylesheet.href = `${window.__APP_BASE_PATH__}src/styles.css`;
+        document.head.appendChild(stylesheet);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module">
+      import(`${window.__APP_BASE_PATH__}src/app.js`);
+    </script>
+  </body>
+</html>

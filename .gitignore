@@ -1,0 +1,9 @@
+audit/
+node_modules/
+dist/
+.publish-repo/
+.gh-auth.err
+.gh-auth.log
+.gh-auth.pid
+.DS_Store
+Thumbs.db

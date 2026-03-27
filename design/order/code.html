@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Корзина | OBSIDIAN OMAKASE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift-bg {
+            background: linear-gradient(180deg, rgba(23, 28, 37, 0.8) 0%, rgba(15, 19, 28, 0.95) 100%);
+        }
+        .glass-card {
+            background: rgba(49, 53, 63, 0.4);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-error": "#690005",
+                "surface-container-highest": "#31353f",
+                "on-background": "#dfe2ef",
+                "inverse-primary": "#ac3400",
+                "tertiary": "#ddc483",
+                "surface-tint": "#ffb59d",
+                "surface-container-high": "#262a34",
+                "outline-variant": "#5a4139",
+                "on-primary-container": "#521400",
+                "inverse-surface": "#dfe2ef",
+                "error-container": "#93000a",
+                "on-secondary-container": "#b2b1ff",
+                "secondary-fixed": "#e2dfff",
+                "error": "#ffb4ab",
+                "surface-bright": "#353943",
+                "tertiary-fixed": "#fae09d",
+                "primary-fixed": "#ffdbd0",
+                "on-tertiary": "#3d2f00",
+                "on-secondary-fixed-variant": "#362eb9",
+                "on-tertiary-fixed-variant": "#554510",
+                "on-tertiary-container": "#4d3d08",
+                "surface-container-low": "#171c25",
+                "on-secondary-fixed": "#0d006a",
+                "on-primary-fixed": "#390b00",
+                "primary": "#ffb59d",
+                "secondary": "#c2c1ff",
+                "on-primary-fixed-variant": "#842600",
+                "inverse-on-surface": "#2c303a",
+                "on-primary": "#5d1800",
+                "primary-fixed-dim": "#ffb59d",
+                "on-secondary": "#1c02a5",
+                "on-surface-variant": "#e2bfb4",
+                "on-surface": "#dfe2ef",
+                "surface-dim": "#0f131c",
+                "secondary-fixed-dim": "#c2c1ff",
+                "tertiary-container": "#c0a96b",
+                "outline": "#aa8a80",
+                "surface-container-lowest": "#0a0e17",
+                "secondary-container": "#3931bb",
+                "on-tertiary-fixed": "#241a00",
+                "on-error-container": "#ffdad6",
+                "background": "#0f131c",
+                "surface-container": "#1b2029",
+                "tertiary-fixed-dim": "#ddc483",
+                "surface-variant": "#31353f",
+                "surface": "#0f131c",
+                "primary-container": "#f85f27"
+              },
+              fontFamily: {
+                "headline": ["Plus Jakarta Sans"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary/30">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl dark:bg-[#0F131C]/60 shadow-2xl shadow-[#0A0E17]/40">
+<nav class="flex justify-between items-center h-20 px-12 w-full max-w-[1920px] mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-[#FFB59D] uppercase">OBSIDIAN OMAKASE</div>
+<div class="hidden md:flex items-center space-x-8 font-plus-jakarta text-sm font-bold tracking-tight">
+<a class="text-white/40 hover:text-white transition-colors" href="#">Menu</a>
+<a class="text-white/40 hover:text-white transition-colors" href="#">Experience</a>
+<a class="text-white/40 hover:text-white transition-colors" href="#">Catering</a>
+</div>
+<div class="flex items-center space-x-6">
+<div class="relative group">
+<span class="material-symbols-outlined text-white/70 group-hover:text-primary transition-colors cursor-pointer" data-icon="search">search</span>
+</div>
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-white/70 hover:text-primary cursor-pointer transition-transform active:scale-90" data-icon="account_circle">account_circle</span>
+<div class="relative">
+<span class="material-symbols-outlined text-[#FFB59D] cursor-pointer" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary-container text-[10px] font-bold text-white">3</span>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-[1440px] mx-auto">
+<h1 class="font-headline text-5xl font-extrabold tracking-tight mb-16 text-on-background uppercase">Оформление <span class="text-primary">заказа</span></h1>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<!-- Left Column: Cart Items -->
+<div class="lg:col-span-7 space-y-8">
+<div class="flex items-center justify-between pb-6 border-b border-outline-variant/20">
+<h2 class="font-headline text-2xl font-bold tracking-tight">Ваша корзина</h2>
+<span class="text-on-surface-variant font-label text-xs uppercase tracking-widest">3 позиции</span>
+</div>
+<div class="space-y-6">
+<!-- Cart Item 1 -->
+<div class="group flex items-center gap-6 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-300">
+<div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-lg bg-surface-container-highest">
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Premium tuna nigiri with gold leaf garnish on a black ceramic plate, dramatic studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvPsDXGszIZ8S-6IqFJkGRv5s0ypDiIxggfTFtez78K6dnc3IvTRAL6lL2H_tXq7dDrZahuDcw5d2OCfUDM86uKLrs9gLN5j7NQ5vtjMvRqVcXyAdh6CQWV18Vb3o0GtLxwiuBgLb8ngssD2tHTK1k0QixxHcGxyP63gzeJ3vBMUG8joW3t4MPP74Hh8LFiaQb2XlbwdyXFQAa88hjYj0zsCGRPlltpXcbejnDHkm6sTBkCuL2zaK4onwcT3QgIreR2GjwoSK_Ese9"/>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-lg font-bold">О-Торо Нигири</h3>
+<span class="font-headline text-lg font-bold text-primary">1 200 ₽</span>
+</div>
+<p class="text-on-surface-variant text-sm mt-1">Брюшко тунца блюфин, васаби</p>
+<div class="flex items-center justify-between mt-4">
+<div class="flex items-center bg-surface-container-highest rounded-full px-3 py-1 gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="remove">remove</span></button>
+<span class="font-bold text-sm">1</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="add">add</span></button>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors flex items-center gap-1 text-xs uppercase tracking-tighter">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span> Удалить
+                                </button>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="group flex items-center gap-6 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-300">
+<div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-lg bg-surface-container-highest">
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Elegant dragon roll sushi with avocado slices and eel sauce, minimal dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCKjIIvLXOVTong875POmXKEMka93enrdp6-sfsX2FiiCY2zI09Zpy1ULcJOdb6k_7P1iDCNhbJnxN5d_GjgL0Wfa01_kdooq_n5Ika4cS3RR9-1wrQxi06R3TMW9QJNcdeaMRgoj7KksIt55WlidMLwtnSLR0q62YzPT_5cTdL-97UqxxPBdUvytoD7WasWfseiIzhPs1N2047iMS-jAipiitlC0Wv79NZqfDDbwD17FWp5DXJ9EzufFKx8BKqv00mCp5VfaqPbYZ"/>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-lg font-bold">Чёрный Дракон</h3>
+<span class="font-headline text-lg font-bold text-primary">950 ₽</span>
+</div>
+<p class="text-on-surface-variant text-sm mt-1">Угорь, авокадо, сливочный сыр</p>
+<div class="flex items-center justify-between mt-4">
+<div class="flex items-center bg-surface-container-highest rounded-full px-3 py-1 gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="remove">remove</span></button>
+<span class="font-bold text-sm">1</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="add">add</span></button>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors flex items-center gap-1 text-xs uppercase tracking-tighter">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span> Удалить
+                                </button>
+</div>
+</div>
+</div>
+<!-- Cart Item 3 -->
+<div class="group flex items-center gap-6 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-300">
+<div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-lg bg-surface-container-highest">
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Fresh salmon sashimi slices arranged on ice with shiso leaves, dark aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSUKTpZt_6ppGj90hsqGTEGa34vx22K3GMYrG23hAQH5secaO13bKUf8CV18zVhvWaQKoIgDha_wUlp0Rp0aI-x147bMpGecj9WBdCVnyxDo5MIrAn9_pXI3Nk1-9WbxKsZx0pZqIlJ_W3RDx31IfFbYgu7w9GwhsqiI3rEABg1iD7wL45N5lo599hfvIpV1oABjBSktMUlf-r5r1eEHNQL5iGFyslGF4V6eaRHldk-OudrTeMqwomtm3FnL-Iqe5dyGOyXO2LsVNl"/>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-lg font-bold">Сашими Сет</h3>
+<span class="font-headline text-lg font-bold text-primary">2 100 ₽</span>
+</div>
+<p class="text-on-surface-variant text-sm mt-1">Лосось, тунец, гребешок (9 шт)</p>
+<div class="flex items-center justify-between mt-4">
+<div class="flex items-center bg-surface-container-highest rounded-full px-3 py-1 gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="remove">remove</span></button>
+<span class="font-bold text-sm">1</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="add">add</span></button>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors flex items-center gap-1 text-xs uppercase tracking-tighter">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span> Удалить
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Min order notice -->
+<div class="mt-12 p-6 rounded-2xl bg-tertiary-container/10 border border-tertiary/20 flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary mt-1" data-icon="info">info</span>
+<div>
+<p class="text-tertiary font-bold text-sm">Бесплатная доставка от 5 000 ₽</p>
+<p class="text-on-surface-variant text-xs mt-1">Вам не хватает 750 ₽ до бесплатной доставки в вашей зоне.</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Checkout Form -->
+<div class="lg:col-span-5">
+<div class="glass-card rounded-3xl p-8 sticky top-32 shadow-2xl shadow-black/50">
+<h2 class="font-headline text-2xl font-bold mb-8">Детали заказа</h2>
+<form class="space-y-6">
+<!-- Delivery Toggle -->
+<div class="flex p-1 bg-surface-container-high rounded-full">
+<button class="flex-1 py-3 px-6 rounded-full bg-primary-container text-white font-bold text-sm transition-all duration-300" type="button">Доставка</button>
+<button class="flex-1 py-3 px-6 rounded-full text-on-surface-variant hover:text-white font-bold text-sm transition-all duration-300" type="button">Самовывоз</button>
+</div>
+<!-- Personal Info -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-on-surface-variant ml-2">Ваше имя</label>
+<input class="w-full bg-surface-container-high border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary text-sm transition-all" placeholder="Александр" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-on-surface-variant ml-2">Телефон</label>
+<input class="w-full bg-surface-container-high border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary text-sm transition-all" placeholder="+7 (999) 000-00-00" type="tel"/>
+</div>
+</div>
+<!-- Address with Suggestion -->
+<div class="space-y-2 relative">
+<label class="font-label text-xs uppercase tracking-widest text-on-surface-variant ml-2">Адрес доставки</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg" data-icon="location_on">location_on</span>
+<input class="w-full bg-surface-container-high border-none rounded-xl pl-12 pr-4 py-4 focus:ring-2 focus:ring-primary text-sm transition-all" placeholder="Улица, дом, квартира" type="text"/>
+</div>
+<!-- Suggestion Dropdown (Mockup) -->
+<div class="hidden absolute z-10 w-full mt-2 bg-surface-container-highest rounded-xl shadow-xl border border-outline-variant/10 overflow-hidden">
+<div class="p-3 hover:bg-surface-bright cursor-pointer text-xs transition-colors">ул. Тверская, 12, Москва</div>
+<div class="p-3 hover:bg-surface-bright cursor-pointer text-xs transition-colors border-t border-outline-variant/10">ул. Тверская-Ямская 1-я, 20, Москва</div>
+</div>
+</div>
+<!-- Time & Payment -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-on-surface-variant ml-2">Время</label>
+<select class="w-full bg-surface-container-high border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary text-sm appearance-none">
+<option>Как можно скорее</option>
+<option>18:00 - 18:30</option>
+<option>19:00 - 19:30</option>
+<option>20:00 - 20:30</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-on-surface-variant ml-2">Оплата</label>
+<select class="w-full bg-surface-container-high border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary text-sm appearance-none">
+<option>Картой онлайн</option>
+<option>Apple Pay / Google Pay</option>
+<option>Картой курьеру</option>
+<option>Наличными</option>
+</select>
+</div>
+</div>
+<!-- Promo Code -->
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container-high border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary text-sm transition-all" placeholder="Промокод" type="text"/>
+<button class="bg-surface-variant px-6 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-surface-bright transition-colors" type="button">Применить</button>
+</div>
+<!-- Price Summary -->
+<div class="pt-6 border-t border-outline-variant/20 space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Сумма заказа</span>
+<span class="font-bold">4 250 ₽</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Доставка (Зона 1)</span>
+<span class="font-bold">350 ₽</span>
+</div>
+<div class="flex justify-between text-xl pt-4 font-headline font-bold">
+<span>Итого к оплате</span>
+<span class="text-primary">4 600 ₽</span>
+</div>
+</div>
+<!-- CTA Button -->
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed py-5 rounded-xl font-headline font-extrabold text-lg uppercase tracking-wider shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all" type="submit">
+                            Оформить заказ
+                        </button>
+<p class="text-[10px] text-center text-on-surface-variant/60 px-4">
+                            Нажимая кнопку, вы соглашаетесь с условиями оферты и политикой конфиденциальности.
+                        </p>
+</form>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-white/5 bg-[#0F131C] dark:bg-[#0F131C] flex flex-col items-center py-20 px-12">
+<div class="text-lg font-bold text-[#FFB59D] mb-12 uppercase tracking-widest">OBSIDIAN OMAKASE</div>
+<div class="flex flex-wrap justify-center gap-8 mb-12">
+<a class="font-inter text-xs tracking-widest uppercase text-white/40 hover:text-[#FFB59D] transition-colors" href="#">Privacy Policy</a>
+<a class="font-inter text-xs tracking-widest uppercase text-white/40 hover:text-[#FFB59D] transition-colors" href="#">Terms of Service</a>
+<a class="font-inter text-xs tracking-widest uppercase text-white/40 hover:text-[#FFB59D] transition-colors" href="#">Sustainability</a>
+<a class="font-inter text-xs tracking-widest uppercase text-white/40 hover:text-[#FFB59D] transition-colors" href="#">Contact Us</a>
+<a class="font-inter text-xs tracking-widest uppercase text-white/40 hover:text-[#FFB59D] transition-colors" href="#">Careers</a>
+</div>
+<div class="text-center">
+<p class="font-inter text-[10px] tracking-widest uppercase text-white/20">© 2024 Obsidian Omakase. All Rights Reserved.</p>
+</div>
+</footer>
+</body></html>

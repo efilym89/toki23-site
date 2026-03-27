@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error": "#690005",
+              "surface-container-highest": "#31353f",
+              "on-background": "#dfe2ef",
+              "inverse-primary": "#ac3400",
+              "tertiary": "#ddc483",
+              "surface-tint": "#ffb59d",
+              "surface-container-high": "#262a34",
+              "outline-variant": "#5a4139",
+              "on-primary-container": "#521400",
+              "inverse-surface": "#dfe2ef",
+              "error-container": "#93000a",
+              "on-secondary-container": "#b2b1ff",
+              "secondary-fixed": "#e2dfff",
+              "error": "#ffb4ab",
+              "surface-bright": "#353943",
+              "tertiary-fixed": "#fae09d",
+              "primary-fixed": "#ffdbd0",
+              "on-tertiary": "#3d2f00",
+              "on-secondary-fixed-variant": "#362eb9",
+              "on-tertiary-fixed-variant": "#554510",
+              "on-tertiary-container": "#4d3d08",
+              "surface-container-low": "#171c25",
+              "on-secondary-fixed": "#0d006a",
+              "on-primary-fixed": "#390b00",
+              "primary": "#ffb59d",
+              "secondary": "#c2c1ff",
+              "on-primary-fixed-variant": "#842600",
+              "inverse-on-surface": "#2c303a",
+              "on-primary": "#5d1800",
+              "primary-fixed-dim": "#ffb59d",
+              "on-secondary": "#1c02a5",
+              "on-surface-variant": "#e2bfb4",
+              "on-surface": "#dfe2ef",
+              "surface-dim": "#0f131c",
+              "secondary-fixed-dim": "#c2c1ff",
+              "tertiary-container": "#c0a96b",
+              "outline": "#aa8a80",
+              "surface-container-lowest": "#0a0e17",
+              "secondary-container": "#3931bb",
+              "on-tertiary-fixed": "#241a00",
+              "on-error-container": "#ffdad6",
+              "background": "#0f131c",
+              "surface-container": "#1b2029",
+              "tertiary-fixed-dim": "#ddc483",
+              "surface-variant": "#31353f",
+              "surface": "#0f131c",
+              "primary-container": "#f85f27"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(49, 53, 63, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #ffb59d 0%, #f85f27 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body overflow-hidden">
+<!-- Top Navigation Anchor -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl flex justify-between items-center h-20 px-12 w-full max-w-[1920px] mx-auto shadow-2xl shadow-[#0A0E17]/40">
+<div class="text-2xl font-bold tracking-tighter text-[#FFB59D] uppercase font-headline">OBSIDIAN OMAKASE</div>
+<div class="hidden md:flex gap-10">
+<a class="font-plus-jakarta text-sm font-bold tracking-tight text-white/70 hover:text-white transition-colors" href="#">Menu</a>
+<a class="font-plus-jakarta text-sm font-bold tracking-tight text-[#FFB59D] border-b-2 border-[#F85F27] pb-1" href="#">Experience</a>
+<a class="font-plus-jakarta text-sm font-bold tracking-tight text-white/70 hover:text-white transition-colors" href="#">Catering</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-on-surface text-2xl cursor-pointer hover:bg-white/5 transition-all duration-300 p-2 rounded-full">account_circle</span>
+<span class="material-symbols-outlined text-on-surface text-2xl cursor-pointer hover:bg-white/5 transition-all duration-300 p-2 rounded-full">shopping_bag</span>
+</div>
+</nav>
+<!-- Modal Backdrop Overlay -->
+<div class="fixed inset-0 bg-surface-container-lowest/80 backdrop-blur-md z-[60] flex items-center justify-center p-4 md:p-8">
+<!-- Main Product Detail Modal -->
+<div class="relative w-full max-w-6xl max-h-[921px] bg-surface-container-low rounded-[2rem] shadow-2xl shadow-black/50 overflow-hidden flex flex-col md:flex-row">
+<!-- Close Button -->
+<button class="absolute top-6 right-6 z-[70] w-12 h-12 flex items-center justify-center rounded-full glass-panel text-on-surface hover:scale-105 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">close</span>
+</button>
+<!-- Left Side: Visual Narrative (Bleeding Image) -->
+<div class="w-full md:w-1/2 relative min-h-[300px] md:min-h-full bg-surface-container">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent z-10"></div>
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Glistening Black Dragon sushi roll with unagi, avocado, and sesame seeds on a dark slate tray with dramatic studio lighting and deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkht1h5ndjRFBJSqI9IpLbVJCW98tACtRGPgqvSzVgyKM_6pfU_lcTJBlLwZM9MVAS3gLeBP08tC8CRbH4dl682GPQK_epbBktp3wDS0xGoXzGZUgoJxAv9wPFaB_41d1BL7j0f-ncUoNamwmWWr0jf_NqXf3t_1O9sU5g0Fxm2gnO7wYEbPzbIPQlUgWnrS2UH4kgZaZhd1H5vZpzJnJOh1Q98VG6JJDbiNMjfLhbiRFjpDq3u02F4AaHm792AOK49k3oi7vuJutJ"/>
+<!-- Floating Labels -->
+<div class="absolute bottom-8 left-8 z-20 flex flex-wrap gap-3">
+<span class="px-4 py-1.5 rounded-full bg-tertiary-container text-on-tertiary-container font-label text-[10px] tracking-widest uppercase font-bold">Chef's Choice</span>
+<span class="px-4 py-1.5 rounded-full glass-panel text-white font-label text-[10px] tracking-widest uppercase font-bold">Premium Eel</span>
+</div>
+</div>
+<!-- Right Side: Content Canvas -->
+<div class="w-full md:w-1/2 flex flex-col h-full bg-surface-container-low overflow-y-auto no-scrollbar">
+<div class="p-8 md:p-12 space-y-8">
+<!-- Title and Price Row -->
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h1 class="text-4xl md:text-5xl font-headline font-extrabold tracking-tighter text-on-surface uppercase">Черный Дракон</h1>
+<div class="text-right">
+<span class="text-3xl font-headline font-bold text-gradient">980 ₽</span>
+<p class="text-on-surface-variant font-label text-xs tracking-wider uppercase mt-1">310 г</p>
+</div>
+</div>
+<div class="h-1 w-20 bg-primary-container rounded-full"></div>
+</div>
+<!-- Description -->
+<div class="space-y-4">
+<h3 class="font-label text-xs tracking-[0.2em] uppercase text-tertiary font-bold">Ингредиенты</h3>
+<p class="text-lg font-body text-on-surface-variant leading-relaxed">
+                            Угорь премиум-класса, нежный сливочный сыр, спелый авокадо, фирменный соус унаги и обжаренный золотистый кунжут. Классика в совершенном исполнении.
+                        </p>
+</div>
+<!-- Nutrition Bento Grid -->
+<div class="grid grid-cols-4 gap-2">
+<div class="bg-surface-container-high p-4 rounded-xl flex flex-col items-center justify-center">
+<span class="text-on-surface font-headline font-bold">420</span>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant mt-1">ккал</span>
+</div>
+<div class="bg-surface-container-high p-4 rounded-xl flex flex-col items-center justify-center">
+<span class="text-on-surface font-headline font-bold">12г</span>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant mt-1">белки</span>
+</div>
+<div class="bg-surface-container-high p-4 rounded-xl flex flex-col items-center justify-center">
+<span class="text-on-surface font-headline font-bold">18г</span>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant mt-1">жиры</span>
+</div>
+<div class="bg-surface-container-high p-4 rounded-xl flex flex-col items-center justify-center">
+<span class="text-on-surface font-headline font-bold">45г</span>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant mt-1">угл</span>
+</div>
+</div>
+<!-- Actions Row -->
+<div class="flex items-center gap-6 pt-4">
+<div class="flex items-center bg-surface-container-highest rounded-full p-1.5 h-16">
+<button class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-white/5 text-on-surface transition-all">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<span class="w-10 text-center font-headline font-bold text-xl">1</span>
+<button class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-white/5 text-on-surface transition-all">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<button class="flex-1 h-16 bg-gradient-to-br from-primary to-primary-container rounded-full flex items-center justify-center gap-3 text-on-primary-fixed font-headline font-extrabold text-lg uppercase tracking-tight shadow-xl shadow-primary-container/20 hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined">shopping_bag</span>
+                            В КОРЗИНУ
+                        </button>
+</div>
+<!-- Recommendation Engine -->
+<div class="pt-8 space-y-6">
+<h3 class="font-label text-xs tracking-[0.2em] uppercase text-white/40 font-bold">Рекомендуем дополнить</h3>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-4 -mx-2 px-2">
+<!-- Suggestion 1 -->
+<div class="min-w-[180px] bg-surface-container-high p-3 rounded-2xl group cursor-pointer hover:bg-surface-bright transition-all">
+<div class="relative aspect-square rounded-xl overflow-hidden mb-3">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Small porcelain bowl of artisanal soy sauce and fresh bright green wasabi on dark stone background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq0KnyiZKrwOwF540Jax8HZAKY-QXwqGGaof0TrFW3anX6YGk9_VAc0jMWTCU7PZzaP1A34uGYReXUP9FPMgEbHCUVBct7z1KTWGsmeS9jDg4dW7NsmSefB41tMzsdvvcRhQLOE4O9H1L9X6onS9BAkK4lKw4scQEO1_ASVqp1js7v8OXXA0ZLR1k1VT25jXa3B8UORcqMQNRG7pfq3N2YCgRspE6TuISQSf2FStB-MqnSKYYN0c8u1d6C-Frc_tNk7akGlyUyUwz9"/>
+</div>
+<h4 class="font-headline font-bold text-sm text-on-surface">Соевый соус &amp; Васаби</h4>
+<div class="flex justify-between items-center mt-2">
+<span class="text-primary font-bold">120 ₽</span>
+<button class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<!-- Suggestion 2 -->
+<div class="min-w-[180px] bg-surface-container-high p-3 rounded-2xl group cursor-pointer hover:bg-surface-bright transition-all">
+<div class="relative aspect-square rounded-xl overflow-hidden mb-3">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Traditional hot Japanese green tea in a dark ceramic cup with steam rising against a black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW9ti6zoVZ-RYi9OCKD_huiYKND6st0mWPW5A_guY8iUJdIoD3AXE0pacjKxQXYTt7btIgzcJOoI75iVKN0UrFUn_wKlx-prdGmKOAG-OzICIJsYdILRvoifspy3a_FMqUpVNqtcjAoifRxDMYQC4bgvc23PNW2GSA6e0jha_5GxkLolm1TUSfzy5dJb8eNOPl5Xnx48Cwywr_y0XXf5He_rWb5TDXQM_0h_5lxoHboXyV-px3F7IDfzMfmzQH4Ziz96RGzMcEtGT_"/>
+</div>
+<h4 class="font-headline font-bold text-sm text-on-surface">Зеленый чай Сенча</h4>
+<div class="flex justify-between items-center mt-2">
+<span class="text-primary font-bold">350 ₽</span>
+<button class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<!-- Suggestion 3 -->
+<div class="min-w-[180px] bg-surface-container-high p-3 rounded-2xl group cursor-pointer hover:bg-surface-bright transition-all">
+<div class="relative aspect-square rounded-xl overflow-hidden mb-3">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Japanese mochi dessert with soft pastel colors and dusting of sugar on a minimalist tray" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC95uO5mogQ9Ung4twV9A4JnZ6YlPVtdj34JidKHMnQ-nZOtHjI1QOZMr3jUmryx9G_hFdczGvmPmn7A7QycVlZxBUi_kUBx5WTfEE31G252NLxQAmsjCjSNZMsB0xlWZ194Alc2Xjj295H6ddyUNoKM7P85LfqmsXx11ZXk7snSyCTsGrmASkXfo1FUsayzjowbFR5WGrBcIptagtxdMnWxvEBdRtfI2jXw2R7iBMmm-HZM1OrHRDccS0a7DtdfDIR_qwspbvmrSi0"/>
+</div>
+<h4 class="font-headline font-bold text-sm text-on-surface">Моти (Ассорти)</h4>
+<div class="flex justify-between items-center mt-2">
+<span class="text-primary font-bold">480 ₽</span>
+<button class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Subtle Footer Anchor for the Content Panel -->
+<div class="mt-auto p-8 border-t border-white/5 flex justify-center opacity-40">
+<div class="text-[10px] font-label tracking-[0.3em] uppercase">Obsidian Signature Series</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Page Content (Blurred Background) -->
+<main class="pt-24 px-12 min-h-screen bg-surface">
+<div class="max-w-7xl mx-auto space-y-20">
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+<!-- Placeholder Cards to simulate context -->
+<div class="aspect-[4/5] bg-surface-container-high rounded-3xl opacity-50 blur-sm"></div>
+<div class="aspect-[4/5] bg-surface-container-high rounded-3xl opacity-50 blur-sm"></div>
+<div class="aspect-[4/5] bg-surface-container-high rounded-3xl opacity-50 blur-sm"></div>
+</section>
+</div>
+</main>
+<!-- Global Footer -->
+<footer class="w-full border-t border-white/5 bg-[#0F131C] flex flex-col items-center py-20 px-12">
+<div class="text-lg font-bold text-[#FFB59D] uppercase tracking-tighter mb-8 font-headline">OBSIDIAN OMAKASE</div>
+<div class="flex flex-wrap justify-center gap-8 mb-12">
+<a class="font-inter text-xs tracking-widest uppercase text-white/40 hover:text-[#FFB59D] transition-colors" href="#">Privacy Policy</a>
+<a class="font-inter text-xs tracking-widest uppercase text-white/40 hover:text-[#FFB59D] transition-colors" href="#">Terms of Service</a>
+<a class="font-inter text-xs tracking-widest uppercase text-white/40 hover:text-[#FFB59D] transition-colors" href="#">Sustainability</a>
+<a class="font-inter text-xs tracking-widest uppercase text-[#FFB59D] transition-colors" href="#">Contact Us</a>
+<a class="font-inter text-xs tracking-widest uppercase text-white/40 hover:text-[#FFB59D] transition-colors" href="#">Careers</a>
+</div>
+<p class="font-inter text-xs tracking-widest uppercase text-white/20">© 2024 Obsidian Omakase. All Rights Reserved.</p>
+</footer>
+</body></html>
